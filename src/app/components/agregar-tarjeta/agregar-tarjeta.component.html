@@ -1,0 +1,51 @@
+<!-- <div class="row mt-4"> -->
+    <div class="col-lg-6 offset-lg-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="titulo">AGRAGAR TARJETA</h5>
+                <div class="mt-2">
+                    <form [formGroup]="tarjetaForm" (ngSubmit)="enviar()">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">
+                                <i class="fa-solid fa-person"
+                                [class.green-icon]="this.tarjetaForm.get('nombre')?.valid && this.tarjetaForm.get('nombre')?.touched"
+                                [class.red-icon]="this.tarjetaForm.get('nombre')?.invalid && this.tarjetaForm.get('nombre')?.touched"></i>
+                            </span>
+                            <input type="text" class="form-control" placeholder="Nombre" 
+                            aria-label="Nombre" aria-describedby="basic-addon1" formControlName="nombre">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">
+                                <i class="fa-regular fa-credit-card"
+                                [class.green-icon]="this.tarjetaForm.get('numero')?.valid && this.tarjetaForm.get('numero')?.touched"
+                                [class.red-icon]="this.tarjetaForm.get('numero')?.invalid && this.tarjetaForm.get('numero')?.touched"></i>
+                            </span>
+                            <input type="tel" class="form-control" inputmode="numeric" pattern="[0-9\s]{13,19}" 
+                            autocomplete="cc-number" maxlength="19" placeholder="xxxx xxxx xxxx xxxx" aria-label="Numero" aria-describedby="basic-addon1" formControlName="numero">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">
+                                <i class="fa-regular fa-calendar"
+                                [class.green-icon]="this.tarjetaForm.get('fecha')?.valid && this.tarjetaForm.get('fecha')?.touched"
+                                [class.red-icon]="this.tarjetaForm.get('fecha')?.invalid && this.tarjetaForm.get('fecha')?.touched"></i>
+                            </span>
+                            <input type="date" class="form-control" placeholder="Fecha Exp" aria-label="Fecha Exp" aria-describedby="basic-addon1" formControlName="fecha">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">
+                                <i class="fa-solid fa-key"
+                                [class.green-icon]="this.tarjetaForm.get('cvv')?.valid && this.tarjetaForm.get('cvv')?.touched"
+                                [class.red-icon]="this.tarjetaForm.get('cvv')?.invalid && this.tarjetaForm.get('cvv')?.touched"></i>
+                            </span>
+                            <input type="tel" class="form-control" inputmode="numeric" pattern="[0-9\s]{3}" placeholder="***" 
+                            maxlength="3" aria-label="Cvv" aria-describedby="basic-addon1" max="999" min="000" formControlName="cvv">
+                        </div>
+                        <div class="input-group mb-3">
+                            <button type="submit" class="btn btn-success btn-lg" [disabled]="!tarjetaForm.valid">Enviar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- </div> -->

@@ -1,0 +1,27 @@
+<!-- <div class="row mt-4"> -->
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="titulo">LISTADO DE TARJETAS</h5>
+                <div>
+                    <table class="table" >
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Numero</th>
+                            <th>Fecha</th>
+                            <th>Editar</th>
+                            <th>Borrar</th>
+                        </tr>
+                        <tr *ngFor="let tarjeta of listadoTarjetas, index as i">
+                            <td>{{tarjeta.nombre}}</td>
+                            <td>{{tarjeta.numero}}</td>
+                            <td>{{tarjeta.fechaExpiracion | date: 'MM/YY'}}</td>
+                            <td><i class="far fa-regular fa-pen-to-square text-info"></i></td>
+                            <td><i class="far fa-solid fa-trash text-danger" (click)="eliminarTarjeta(i)"></i></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- </div> -->
