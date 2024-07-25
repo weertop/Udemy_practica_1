@@ -1,0 +1,10 @@
+/*oculto por defecto*/
+modal {
+    display: none;
+}
+
+/*Evitar el scrollbar con el modal abierto y que desaparezca*/
+body.modal-open {
+    overflow: hidden;
+    background-color: rgba(0,0,0,0.5);
+}

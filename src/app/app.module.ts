@@ -10,13 +10,16 @@ import { TarjetaCreditoComponent } from './components/tarjeta-credito/tarjeta-cr
 import { AgregarTarjetaComponent } from './components/agregar-tarjeta/agregar-tarjeta.component';
 import { ListarTarjetasComponent } from './components/listar-tarjetas/listar-tarjetas.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DatePipe } from '@angular/common';
+import { ModalComponent } from './components/modal/modal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TarjetaCreditoComponent,
     AgregarTarjetaComponent,
-    ListarTarjetasComponent
+    ListarTarjetasComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +30,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ToastrModule.forRoot(),
     HttpClientModule
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
