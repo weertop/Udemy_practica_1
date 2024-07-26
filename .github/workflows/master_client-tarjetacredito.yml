@@ -29,11 +29,11 @@ jobs:
 
       - name: Replace API URL
         run: |
-          echo "API_URL es ${{ vars.API_URL }}"
+          echo "API_URL es ${{ env.API_URL }} y la otra es ${{ vars.API_URL-Production }}"
           $content = Get-Content src\environments\environment.prod.ts -Raw
           echo "valor de content 1"
           echo $content
-          $content = $content -replace '#{API_URL}#', '${{ vars.API_URL-Production }}'
+          $content = $content -replace '#{API_URL}#', '${{ env.API_URL }}'
           echo "valor de content 2"
           echo $content
           $content | Set-Content src\environments\environment.prod.ts
