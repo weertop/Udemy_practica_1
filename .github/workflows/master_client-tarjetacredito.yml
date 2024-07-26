@@ -23,7 +23,7 @@ jobs:
 
       - name: Set working directory
         run: |
-          cd ${{ github.workspace }}/Udemy_practica_1
+          cd ./Udemy_practica_1
           dir
 
       - name: Replace API URL
