@@ -21,6 +21,13 @@ jobs:
         with:
           node-version: '16.x'
 
+      - name: Replace API URL
+        uses: microsoft/variable-substitution@v1
+        with:
+          files: 'src/environments/environment.prod.ts'
+        env:
+          API_URL: ${{ vars.API_URL }}
+
       - name: npm install, build
         run: |
           npm install -g @angular/cli@16.x
