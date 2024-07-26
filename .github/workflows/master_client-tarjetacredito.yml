@@ -12,6 +12,7 @@ on:
 jobs:
   build:
     runs-on: windows-latest
+    environment: Production
 
     steps:
       - uses: actions/checkout@v4
@@ -29,11 +30,11 @@ jobs:
 
       - name: Replace API URL
         run: |
-          echo "API_URL es ${{ env.API_URL }} y la otra es ${{ vars.API_URL-Production }}"
+          echo "API_URL es ${{ env.API_URL }} y la otra es ${{ vars.API_URL }}"
           $content = Get-Content src\environments\environment.prod.ts -Raw
           echo "valor de content 1"
           echo $content
-          $content = $content -replace '#{API_URL}#', '${{ env.API_URL }}'
+          $content = $content -replace '#{API_URL}#', '${{ vars.API_URL }}'
           echo "valor de content 2"
           echo $content
           $content | Set-Content src\environments\environment.prod.ts
