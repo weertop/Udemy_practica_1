@@ -23,6 +23,7 @@ jobs:
 
       - name: Set working directory
         run: |
+          cd src/environments
           dir
 
       - name: Replace API URL
