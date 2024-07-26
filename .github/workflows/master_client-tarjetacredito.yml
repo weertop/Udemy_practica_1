@@ -21,6 +21,11 @@ jobs:
         with:
           node-version: '16.x'
 
+      - name: Set working directory
+        run: |
+          cd ${{ github.workspace }}/Udemy_practica_1
+          dir
+
       - name: Replace API URL
         uses: microsoft/variable-substitution@v1
         with:
