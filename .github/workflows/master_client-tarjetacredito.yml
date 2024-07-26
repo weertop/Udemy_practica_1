@@ -30,7 +30,7 @@ jobs:
       - name: Replace API URL
         run: |
           $content = Get-Content src\environments\environment.prod.ts -Raw
-          $content = $content -replace '#{API_URL}#', '${{ vars.API_URL }}'
+          $content = $content -replace '#{API_URL}#', '${{ vars.API_URL-Production }}'
           $content | Set-Content src\environments\environment.prod.ts
           type src\environments\environment.prod.ts
 
@@ -45,6 +45,7 @@ jobs:
         with:
           name: node-app
           path: ./dist/practica_udemy_1
+          overwrite: true
 
   deploy:
     runs-on: ubuntu-latest
