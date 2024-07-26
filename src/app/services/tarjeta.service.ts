@@ -2,15 +2,15 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ITarjeta } from '../models/tarjeta.model';
 import { map, Observable } from 'rxjs';
-import { enviroment } from 'src/enviroments/enviroment';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TarjetaService {
 
-  private baseURL: string = enviroment.apiUrl;
-  private apiURL: string = "TarjetaCredito/";
+  private baseURL: string = environment.apiUrl;
+  private apiURL: string = "/api/TarjetaCredito/";
 
   constructor(private httpClient: HttpClient) { }
 
