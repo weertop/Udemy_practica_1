@@ -29,8 +29,8 @@ jobs:
 
       - name: Replace API URL
         run: |
-          $content: Get-Content src\environments\environment.prod.ts -Raw
-          $content: $content -replace '#{API_URL}#', '${{ vars.API_URL }}'
+          $content = Get-Content src\environments\environment.prod.ts -Raw
+          $content = $content -replace '#{API_URL}#', '${{ vars.API_URL }}'
           $content | Set-Content src\environments\environment.prod.ts
           type src\environments\environment.prod.ts
 
