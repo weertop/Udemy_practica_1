@@ -23,7 +23,6 @@ jobs:
 
       - name: Set working directory
         run: |
-          cd ./Udemy_practica_1
           dir
 
       - name: Replace API URL
