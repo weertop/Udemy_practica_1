@@ -23,7 +23,7 @@ jobs:
 
       - name: Set working directory
         run: |
-          dir $env:GITHUB_WORKSPACE\src\environments
+          dir
           cd src\environments
           dir
 
