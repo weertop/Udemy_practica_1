@@ -28,11 +28,11 @@ jobs:
           dir
 
       - name: Replace API URL
-        uses: microsoft/variable-substitution@v1
-        with:
-          files: 'src\environments\environment.prod.ts'
-        env:
-          API_URL: ${{ vars.API_URL }}
+        run: |
+          $content: Get-Content src\environments\environment.prod.ts -Raw
+          $content: $content -replace '#{API_URL}#', '${{ vars.API_URL }}'
+          $content | Set-Content src\environments\environment.prod.ts
+          type src\environments\environment.prod.ts
 
       - name: npm install, build
         run: |
